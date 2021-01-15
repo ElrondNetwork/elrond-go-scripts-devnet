@@ -16,7 +16,7 @@ source $SCRIPTPATH/config/menu_functions.cfg
 
 #Check if there are newer versions of the scripts available
 cd $SCRIPTPATH
-CURRENT_SCRIPTS_COMMIT=$(git show | grep commit | awk '{print $2}')
+CURRENT_SCRIPTS_COMMIT=$(git show | grep  -m 1 commit | awk '{print $2}')
 
 if [ "$LATEST_SCRIPTS_COMMIT" != "$CURRENT_SCRIPTS_COMMIT" ]; then
   echo -e 
